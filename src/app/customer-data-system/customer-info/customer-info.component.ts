@@ -23,11 +23,28 @@ export class CustomerInfoComponent implements OnInit {
     if(form != null )
     form.resetForm();
     this.service.formData = {
-      id: null,
-      fullName: '',
-      empCode: '',
-      state: '',
-      country: '',
+    id: null,
+    slNo: '',
+    orderId: '',
+    orderDate: '', 
+    shipDate: '',
+    shipMode: '',
+    customerId: '',
+    customerName: '',
+    segment: '',
+    city: '',
+    state: '',
+    country: '',
+    postalCode: '',
+    region: '',
+    productId: '',
+    productName: '',
+    category: '',
+    subCategory: '',
+    sales: '',
+    quality: '',
+    discount: '',
+    profits: ''
     }
   }
 

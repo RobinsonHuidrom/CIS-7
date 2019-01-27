@@ -2,6 +2,10 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
+.form-control:focus{
+    border-color: orchid !important;
+}
+
 table.table-hover tbody tr:hover {
     cursor: pointer;
 }
