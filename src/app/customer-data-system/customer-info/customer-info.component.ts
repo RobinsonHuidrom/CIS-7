@@ -3,21 +3,23 @@ import { CustomerInfoService } from './../../shared/customer-info.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { AngularFirestore } from '@angular/fire/firestore';
+
+
 @Component({
   selector: 'app-customer-info',
   templateUrl: './customer-info.component.html',
   styleUrls: ['./customer-info.component.css']
 })
+
 export class CustomerInfoComponent implements OnInit {
 
   constructor( private service : CustomerInfoService, 
                private firestore : AngularFirestore,
-               private toastr : ToastrService ) { }
+               private toastr : ToastrService )  { }
 
   ngOnInit() {
     this.resetForm();
   }
-
 
   resetForm(form?: NgForm) {
     if(form != null )
@@ -59,4 +61,5 @@ export class CustomerInfoComponent implements OnInit {
     this.resetForm(form);
     this.toastr.success("Submitted Successfully","CIS");
   }
+
 }

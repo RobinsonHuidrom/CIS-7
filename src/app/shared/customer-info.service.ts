@@ -14,5 +14,4 @@ export class CustomerInfoService {
   getCustomers() {
     return this.firestore.collection('CustomerInfo').snapshotChanges();
   }
-
 }

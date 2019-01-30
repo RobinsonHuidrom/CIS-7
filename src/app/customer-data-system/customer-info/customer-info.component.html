@@ -1,4 +1,4 @@
-<h1 class="display-4"> Customer Information Service</h1>
+<h3 class="display-5 text-center" > Customer Information Service</h3>
 <hr>
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
 
@@ -6,103 +6,125 @@
 
   <div class="form-row">
       <div class="form-group col-md-2">
-          <input name="slNo" #slNo="ngModel" [(ngModel)]="service.formData.slNo" class="form-control" placeholder="SL.No" required>
+          <label>Sl.No</label>
+          <input name="slNo" #slNo="ngModel" [(ngModel)]="service.formData.slNo" class="form-control"  required>
       </div>
       
       <div class="form-group col-md-2">
-          <input name="orderId" #orderId="ngModel" [(ngModel)]="service.formData.orderId" class="form-control" placeholder="Order_Id" required>
+          <label>Order Id</label>
+          <input name="orderId" #orderId="ngModel" [(ngModel)]="service.formData.orderId" class="form-control"  required>
       </div>
 
       <div class="form-group col-md-3">
-            <input name="orderDate" #orderDate="ngModel" [(ngModel)]="service.formData.orderDate" class="form-control" placeholder="Order_Date" required>
+            <label>Order Date</label>
+            <input name="orderDate" #orderDate="ngModel" [(ngModel)]="service.formData.orderDate" class="form-control"  required>
       </div>
 
       <div class="form-group col-md-3">
-              <input name="shipDate" #shipDate="ngModel" [(ngModel)]="service.formData.shipDate" class="form-control" placeholder="Ship_Date" required>
+            <label>Ship Date</label>
+            <input name="shipDate" #shipDate="ngModel" [(ngModel)]="service.formData.shipDate" class="form-control" required>
       </div>
 
       <div class="form-group col-md-2">
-                <input name="shipMode" #shipMode="ngModel" [(ngModel)]="service.formData.shipMode" class="form-control" placeholder="Ship_Mode" required>
+            <label>Ship Mode</label>
+            <input name="shipMode" #shipMode="ngModel" [(ngModel)]="service.formData.shipMode" class="form-control"  required>
       </div>
   </div>
 
 
   <div class="form-row">
       <div class="form-group col-md-3">
-          <input name="customerId" #customerId="ngModel" [(ngModel)]="service.formData.customerId" class="form-control" placeholder="Customer_Id" required>
+          <label>Customer Id</label>
+          <input name="customerId" #customerId="ngModel" [(ngModel)]="service.formData.customerId" class="form-control"  required>
       </div>
       
       <div class="form-group col-md-3">
-          <input name="customerName" #customerName="ngModel" [(ngModel)]="service.formData.customerName" class="form-control" placeholder="Customer_Name" required>
+          <label>Customer Name</label>
+          <input name="customerName" #customerName="ngModel" [(ngModel)]="service.formData.customerName" class="form-control"  required>
       </div>
 
       <div class="form-group col-md-3">
-          <input name="segment" #segment="ngModel" [(ngModel)]="service.formData.segment" class="form-control" placeholder="Segment" required>
+          <label>Segment</label>
+          <input name="segment" #segment="ngModel" [(ngModel)]="service.formData.segment" class="form-control"  required>
       </div>
 
       <div class="form-group col-md-3">
-              <input name="country" #country="ngModel" [(ngModel)]="service.formData.country" class="form-control" placeholder="Country" required>
+         <label>Country</label>
+         <input name="country" #country="ngModel" [(ngModel)]="service.formData.country" class="form-control"  required>
       </div>
   </div>
 
   <div class="form-row">
       <div class="form-group col-md-3">
-          <input name="state" #state="ngModel" [(ngModel)]="service.formData.state" class="form-control" placeholder="State" required>
+        <label>State</label>
+        <input name="state" #state="ngModel" [(ngModel)]="service.formData.state" class="form-control"  required>
       </div>
       
       <div class="form-group col-md-3">
-          <input name="city" #city="ngModel" [(ngModel)]="service.formData.city" class="form-control" placeholder="City" required>
+          <label>City</label>
+          <input name="city" #city="ngModel" [(ngModel)]="service.formData.city" class="form-control"  required>
       </div>
 
       <div class="form-group col-md-3">
-          <input name="region" #region="ngModel" [(ngModel)]="service.formData.region" class="form-control" placeholder="Region" required>
+          <label>Region</label>
+          <input name="region" #region="ngModel" [(ngModel)]="service.formData.region" class="form-control"  required>
       </div>
 
       <div class="form-group col-md-3">
-          <input name="postalCode" #postalCode="ngModel" [(ngModel)]="service.formData.postalCode" class="form-control" placeholder="Postal_Code" required>
+            <label>Postal Code</label>
+          <input name="postalCode" #postalCode="ngModel" [(ngModel)]="service.formData.postalCode" class="form-control"  required>
       </div>
   </div>
 
   <div class="form-row">
       <div class="form-group col-md-3">
-          <input name="productId" #productId="ngModel" [(ngModel)]="service.formData.productId" class="form-control" placeholder="Product_Id" required>
+            <label>Product Id</label>
+          <input name="productId" #productId="ngModel" [(ngModel)]="service.formData.productId" class="form-control"  required>
       </div>
       
       <div class="form-group col-md-3">
-          <input name="productName" #productName="ngModel" [(ngModel)]="service.formData.productName" class="form-control" placeholder="Product_Name" required>
+            <label>Product Name</label>
+          <input name="productName" #productName="ngModel" [(ngModel)]="service.formData.productName" class="form-control"  required>
       </div>
 
       <div class="form-group col-md-3">
-          <input name="category" #category="ngModel" [(ngModel)]="service.formData.category" class="form-control" placeholder="Category" required>
+            <label>Category</label>
+          <input name="category" #category="ngModel" [(ngModel)]="service.formData.category" class="form-control"  required>
       </div>
 
       <div class="form-group col-md-3">
-          <input name="subCategory" #subCategory="ngModel" [(ngModel)]="service.formData.subCategory" class="form-control" placeholder="Sub_Category" required>
+            <label>Sub Category</label>
+          <input name="subCategory" #subCategory="ngModel" [(ngModel)]="service.formData.subCategory" class="form-control"  required>
       </div>
   </div>
 
 
   <div class="form-row">
       <div class="form-group col-md-3">
-          <input name="sales" #sales="ngModel" [(ngModel)]="service.formData.sales" class="form-control" placeholder="Sales" required>
+            <label>Sales</label>
+          <input name="sales" #sales="ngModel" [(ngModel)]="service.formData.sales" class="form-control"  required>
       </div>
       
       <div class="form-group col-md-3">
-          <input name="quality" #quality="ngModel" [(ngModel)]="service.formData.quality" class="form-control" placeholder="Quality" required>
+            <label>Quality</label>
+          <input name="quality" #quality="ngModel" [(ngModel)]="service.formData.quality" class="form-control"  required>
       </div>
 
       <div class="form-group col-md-3">
-          <input name="discount" #discount="ngModel" [(ngModel)]="service.formData.discount" class="form-control" placeholder="Discount" required>
+            <label>Discount</label>
+          <input name="discount" #discount="ngModel" [(ngModel)]="service.formData.discount" class="form-control"  required>
       </div>
 
       <div class="form-group col-md-3">
-          <input name="profits" #profits="ngModel" [(ngModel)]="service.formData.profits" class="form-control" placeholder="Profits" required>
+            <label>Profits</label>
+          <input name="profits" #profits="ngModel" [(ngModel)]="service.formData.profits" class="form-control"  required>
       </div>
   </div>
 
-
+  <div class="form-row float-right">
   <div class="form-group">
     <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info"> Submit</button>
   </div>
-
+</div>
+  
 </form>

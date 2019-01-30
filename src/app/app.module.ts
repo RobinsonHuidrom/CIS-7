@@ -1,3 +1,4 @@
+
 import { CustomerInfoService } from './shared/customer-info.service';
 import { CustomerInfoComponent } from './customer-data-system/customer-info/customer-info.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,9 +12,15 @@ import { CustomerDataSystemComponent } from './customer-data-system/customer-dat
 import { ListComponent } from './customer-data-system/list/list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { AppRoutingModule } from './app-routing.module';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+
+
+
+
  
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,9 +34,13 @@ import { ToastrModule } from 'ngx-toastr';
     AngularFirestoreModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AppRoutingModule,
+    NgxDatatableModule,
+    NgbModule
   ],
   providers: [CustomerInfoService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
