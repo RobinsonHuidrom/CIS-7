@@ -13,7 +13,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 
 export class CustomerInfoComponent implements OnInit {
 
-  constructor( private service : CustomerInfoService, 
+  constructor( public service : CustomerInfoService, 
                private firestore : AngularFirestore,
                private toastr : ToastrService )  { }
 
@@ -60,6 +60,10 @@ export class CustomerInfoComponent implements OnInit {
       this.firestore.doc('CustomerInfo/'+ form.value.id).update(data);
     this.resetForm(form);
     this.toastr.success("Submitted Successfully","CIS");
+  }
+
+  clearForm(){
+    this.resetForm();
   }
 
 }

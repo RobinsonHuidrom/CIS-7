@@ -12,7 +12,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let data of list; index as i">
+  <tr *ngFor="let data of list;">
     <td (click)=onEdit(data)>{{ data.slNo }}</td>
     <td (click)=onEdit(data)>{{ data.customerName }}</td>
     <td (click)=onEdit(data)>{{ data.productName }}</td>
@@ -22,14 +22,46 @@
   </tbody>
 </table>
 
-
  <!-- <div class="d-flex justify-content-between p-2">
-  <ngb-pagination [collectionSize]="list" #numPages [pageSize]="itemsPerPage" [(page)]="currentPage" (pageChange)="onPageChange(currentPage)"></ngb-pagination>
+  <ngb-pagination 
+    [collectionSize]="collectionSize" 
+    [pageSize]="pageSize"
+    [page]="1">
+  </ngb-pagination>
   
-     <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
       <option [ngValue]="2">2 items per page</option>
       <option [ngValue]="4">4 items per page</option>
       <option [ngValue]="6">6 items per page</option>
-    </select> 
+    </select>   
     
   </div>  -->
+ 
+
+
+ <!-- <table cdk-table [dataSource]="dataSource$">
+  
+
+  <ng-container cdkColumnDef="name">
+    <th cdk-header-cell *cdkHeaderCellDef> Hero Name </th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.name}} </td>
+  </ng-container>
+
+ 
+  <ng-container cdkColumnDef="types">
+    <th cdk-header-cell *cdkHeaderCellDef> Types </th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.types}} </td>
+  </ng-container>
+
+
+  <ng-container cdkColumnDef="attack">
+    <th cdk-header-cell *cdkHeaderCellDef> Attack </th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.attack}} </td>
+  </ng-container> 
+
+
+  <tr cdk-header-row *cdkHeaderRowDef="Columns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: displayedColumns$.value"></tr>
+
+</table>
+   -->
