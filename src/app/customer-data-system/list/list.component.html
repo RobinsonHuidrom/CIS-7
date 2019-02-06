@@ -11,31 +11,29 @@
     <th scope="col">Shipment Mode</th>
   </tr>
   </thead>
+
   <tbody>
-  <tr *ngFor="let data of list;">
-    <td (click)=onEdit(data)>{{ data.slNo }}</td>
-    <td (click)=onEdit(data)>{{ data.customerName }}</td>
-    <td (click)=onEdit(data)>{{ data.productName }}</td>
-    <td (click)=onEdit(data)>{{ data.orderDate }}</td>
-    <td (click)=onEdit(data)>{{ data.shipMode }}</td>
-  </tr>
+   <tr *ngFor="let data of listDATA;">
+     <td (click)=onEdit(data)>{{ data.slNo }}</td>
+     <td (click)=onEdit(data)>{{ data.customerName }}</td>
+     <td (click)=onEdit(data)>{{ data.productName }}</td>
+     <td (click)=onEdit(data)>{{ data.orderDate }}</td>
+     <td (click)=onEdit(data)>{{ data.shipMode }}</td>
+   </tr>
   </tbody>
 </table>
 
- <!-- <div class="d-flex justify-content-between p-2">
-  <ngb-pagination 
-    [collectionSize]="collectionSize" 
-    [pageSize]="pageSize"
-    [page]="1">
-  </ngb-pagination>
+  <div class="d-flex justify-content-between p-2">
+
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
   
     <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
-      <option [ngValue]="2">2 items per page</option>
-      <option [ngValue]="4">4 items per page</option>
-      <option [ngValue]="6">6 items per page</option>
+      <option [ngValue]="5">5 Data per page</option>
+      <option [ngValue]="10">10 Data per page</option>
+      <option [ngValue]="20">20 Data per page</option>
     </select>   
     
-  </div>  -->
+  </div>  
  
 
 

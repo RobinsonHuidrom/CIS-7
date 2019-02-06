@@ -2,10 +2,9 @@
 import { ToastrService } from 'ngx-toastr';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { CustomerInfo } from './../../shared/customer-info.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
 import { CustomerInfoService } from 'src/app/shared/customer-info.service';
-import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
-import { map, switchMap, take } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-list',
@@ -21,13 +20,19 @@ export class ListComponent implements OnInit {
   pageSize = 5;
   collectionSize;
 
+  get listDATA():CustomerInfo[] {
+    return this.list
+      .map((data, i) => ({id: i + 1, ...data}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+    }
+
   constructor( private service : CustomerInfoService,
                private firestore: AngularFirestore,
                private Toastr: ToastrService ) { }
 
   ngOnInit() {
 
-    // this.pages();
+    this.pages();
 
       this.service.getCustomers().subscribe( res => {
       this.list = res.map(item => {
@@ -35,8 +40,9 @@ export class ListComponent implements OnInit {
                  id: item.payload.doc.id,
                 ...item.payload.doc.data() 
              } as CustomerInfo;
-      }) .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+      })
    })
+
   }
   
   onEdit(data: CustomerInfo) {
@@ -62,9 +68,11 @@ export class ListComponent implements OnInit {
     }
   }
 
-  // pages() {
-  //   this.firestore.collection('CustomerInfo').valueChanges().subscribe( values => {
-  //     this.collectionSize = values.length 
-  //   });
-  // }
+  pages() {
+  this.firestore.collection('CustomerInfo').valueChanges().subscribe( values => {
+  this.collectionSize = values.length 
+    });
+   }
 }
+
+
