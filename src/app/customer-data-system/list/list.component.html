@@ -1,0 +1,66 @@
+<label>Search&nbsp;</label>
+
+<input [(ngModel)]="searchText" placeholder="Search Sl.No" class="advancedSearchTextbox">
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Sl.no</th>
+    <th scope="col">Customer Name</th>
+    <th scope="col">Product Name</th>
+    <th scope="col">Order Date</th>
+    <th scope="col">Shipment Mode</th>
+  </tr>
+  </thead>
+
+  <tbody>
+   <tr *ngFor="let data of listDATA | grdFilter: {slNo: searchText} ">
+     <td (click)=onEdit(data)>{{ data.slNo }}</td>
+     <td (click)=onEdit(data)>{{ data.customerName }}</td>
+     <td (click)=onEdit(data)>{{ data.productName }}</td>
+     <td (click)=onEdit(data)>{{ data.orderDate }}</td>
+     <td (click)=onEdit(data)>{{ data.shipMode }}</td>
+   </tr>
+  </tbody>
+</table>
+
+  <div class="d-flex justify-content-between p-2">
+
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
+  
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+      <option [ngValue]="5">5 Data per page</option>
+      <option [ngValue]="50">50 Data per page</option>
+      <option [ngValue]="100">100 Data per page</option>
+    </select>   
+    
+  </div>  
+ 
+
+
+ <!-- <table cdk-table [dataSource]="dataSource$">
+  
+
+  <ng-container cdkColumnDef="name">
+    <th cdk-header-cell *cdkHeaderCellDef> Hero Name </th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.name}} </td>
+  </ng-container>
+
+ 
+  <ng-container cdkColumnDef="types">
+    <th cdk-header-cell *cdkHeaderCellDef> Types </th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.types}} </td>
+  </ng-container>
+
+
+  <ng-container cdkColumnDef="attack">
+    <th cdk-header-cell *cdkHeaderCellDef> Attack </th>
+    <td cdk-cell *cdkCellDef="let row"> {{row.attack}} </td>
+  </ng-container> 
+
+
+  <tr cdk-header-row *cdkHeaderRowDef="Columns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: displayedColumns$.value"></tr>
+
+</table>
+   -->

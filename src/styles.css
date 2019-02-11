@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+.form-control:focus{
+    border-color: rgb(102, 224, 91) !important;
+}
+
+table.table-hover tbody tr:hover {
+    cursor: pointer;
+}
+
+label{
+    color: royalblue; 
+}
