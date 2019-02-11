@@ -1,6 +1,10 @@
 <label>Search&nbsp;</label>
+<<<<<<< HEAD
 
 <input [(ngModel)]="searchText" placeholder="Search Sl.No" class="advancedSearchTextbox">
+=======
+<input type="text" [(ngModel)]="sNo" (input)="search()" placeholder=" Enter Sl.No">
+>>>>>>> d049a1bd96a45b7234ab5d6fd7e6fc45defef051
 
 <table class="table table-striped">
   <thead>
@@ -14,7 +18,11 @@
   </thead>
 
   <tbody>
+<<<<<<< HEAD
    <tr *ngFor="let data of listDATA | grdFilter: {slNo: searchText} ">
+=======
+   <tr *ngFor="let data of listDATA;">
+>>>>>>> d049a1bd96a45b7234ab5d6fd7e6fc45defef051
      <td (click)=onEdit(data)>{{ data.slNo }}</td>
      <td (click)=onEdit(data)>{{ data.customerName }}</td>
      <td (click)=onEdit(data)>{{ data.productName }}</td>
@@ -30,8 +38,13 @@
   
     <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
       <option [ngValue]="5">5 Data per page</option>
+<<<<<<< HEAD
       <option [ngValue]="50">50 Data per page</option>
       <option [ngValue]="100">100 Data per page</option>
+=======
+      <option [ngValue]="10">10 Data per page</option>
+      <option [ngValue]="20">20 Data per page</option>
+>>>>>>> d049a1bd96a45b7234ab5d6fd7e6fc45defef051
     </select>   
     
   </div>  

@@ -14,7 +14,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+<<<<<<< HEAD
 import { GrdFilterPipe } from './../app/extra/filter.pipe';
+=======
+>>>>>>> d049a1bd96a45b7234ab5d6fd7e6fc45defef051
 
 
  
@@ -24,7 +27,10 @@ import { GrdFilterPipe } from './../app/extra/filter.pipe';
     CustomerDataSystemComponent,
     ListComponent,
     CustomerInfoComponent,
+<<<<<<< HEAD
     GrdFilterPipe
+=======
+>>>>>>> d049a1bd96a45b7234ab5d6fd7e6fc45defef051
    
   ],
   imports: [

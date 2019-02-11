@@ -5,6 +5,10 @@ import { CustomerInfo } from './../../shared/customer-info.model';
 import { Component, OnInit , Input } from '@angular/core';
 import { CustomerInfoService } from 'src/app/shared/customer-info.service';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d049a1bd96a45b7234ab5d6fd7e6fc45defef051
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -31,10 +35,16 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
 
+<<<<<<< HEAD
     // this.pages();
 
       this.service.getCustomers().subscribe( res => {
         this.collectionSize = res.length; 
+=======
+    this.pages();
+
+      this.service.getCustomers().subscribe( res => {
+>>>>>>> d049a1bd96a45b7234ab5d6fd7e6fc45defef051
       this.list = res.map(item => {
         return { 
                  id: item.payload.doc.id,
@@ -56,6 +66,7 @@ export class ListComponent implements OnInit {
     }
   }
 
+<<<<<<< HEAD
   // search() {
 
   //   if(this.sNo != "") {
@@ -73,6 +84,25 @@ export class ListComponent implements OnInit {
   // this.collectionSize = values.length 
   //   });
   //  }
+=======
+  search() {
+
+    if(this.sNo != "") {
+      this.list = this.list.filter(res=> {
+        return res.slNo.toLocaleLowerCase().match(this.sNo.toLocaleLowerCase());
+      });
+    } 
+    else if( this.sNo == "") {
+      this.ngOnInit();
+    }
+  }
+
+  pages() {
+  this.firestore.collection('CustomerInfo').valueChanges().subscribe( values => {
+  this.collectionSize = values.length 
+    });
+   }
+>>>>>>> d049a1bd96a45b7234ab5d6fd7e6fc45defef051
 }
 
 
